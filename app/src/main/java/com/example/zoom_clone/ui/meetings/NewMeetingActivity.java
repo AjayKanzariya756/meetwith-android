@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.ui.meetings;
+package com.example.zoom_clone.ui.meetings;
 
 import android.content.Intent;
 import android.os.Bundle;

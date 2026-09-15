@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.ui.contacts;
+package com.example.zoom_clone.ui.contacts;
 
 import android.os.Bundle;
 import android.widget.Toast;

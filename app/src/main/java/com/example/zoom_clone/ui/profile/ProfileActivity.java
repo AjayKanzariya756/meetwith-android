@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.ui.profile;
+package com.example.zoom_clone.ui.profile;
 
 import android.net.Uri;
 import android.os.Bundle;

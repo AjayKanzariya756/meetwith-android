@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.ui.fragments;
+package com.example.zoom_clone.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;

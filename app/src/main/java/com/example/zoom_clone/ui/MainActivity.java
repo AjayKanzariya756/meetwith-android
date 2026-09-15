@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.ui;
+package com.example.zoom_clone.ui;
 
 import android.os.Bundle;
 

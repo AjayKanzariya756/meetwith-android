@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.models;
+package com.example.zoom_clone.models;
 
 import java.io.Serializable;
 import java.util.HashMap;

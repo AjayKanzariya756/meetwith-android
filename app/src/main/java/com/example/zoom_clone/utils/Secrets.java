@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.utils;
+package com.example.zoom_clone.utils;
 
 public class Secrets {
     // ZegoCloud AppID and AppSign (from MeetWith project)

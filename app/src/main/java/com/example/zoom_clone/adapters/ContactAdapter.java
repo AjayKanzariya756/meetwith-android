@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.adapters;
+package com.example.zoom_clone.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

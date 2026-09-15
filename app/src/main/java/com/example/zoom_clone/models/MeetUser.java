@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.models;
+package com.example.zoom_clone.models;
 
 import com.google.firebase.firestore.PropertyName;
 import java.io.Serializable;

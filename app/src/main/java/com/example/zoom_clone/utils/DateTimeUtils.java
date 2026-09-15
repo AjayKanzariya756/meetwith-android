@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.utils;
+package com.example.zoom_clone.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-﻿# 🤝 MeetWith — Native Android (Java)
+# 🤝 MeetWith — Native Android (Java)
 
 This is the **Pure Java** Native Android port of the **MeetWith** Flutter video conferencing app. It features full support for Firebase Authentication, Cloud Firestore real-time database, Firebase Storage, and ZegoCloud HD Video Conferencing.
 

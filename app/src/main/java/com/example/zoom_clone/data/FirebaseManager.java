@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.data;
+package com.example.zoom_clone.data;
 
 import android.net.Uri;
 import android.util.Log;

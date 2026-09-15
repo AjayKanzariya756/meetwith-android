@@ -1,4 +1,4 @@
-﻿package com.example.zoom_clone.ui.auth;
+package com.example.zoom_clone.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
