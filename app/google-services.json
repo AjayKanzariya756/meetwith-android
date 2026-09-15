@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "464605072934",
+    "firebase_url": "https://meetwith-a23b8-default-rtdb.firebaseio.com",
+    "project_id": "meetwith-a23b8",
+    "storage_bucket": "meetwith-a23b8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464605072934:android:2606a52b6327f47505e0e7",
+        "android_client_info": {
+          "package_name": "com.example.zoom_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464605072934-qm2kp4if4o6u9ikfv4ncso1l3k64sn0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0D9JdOfoV2JnMI3GSgrGRMnWgOBkgHgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464605072934-qm2kp4if4o6u9ikfv4ncso1l3k64sn0i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "464605072934-af5taoca3noiv1lbatuvtrqlgr0ta5ls.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
