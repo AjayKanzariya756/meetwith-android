@@ -40,7 +40,7 @@ public class FirebaseManager {
     private MeetUser curUser;
 
     private FirebaseManager() {
-        auth = FirebaseAuth.instance != null ? FirebaseAuth.getInstance() : null;
+        auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
     }

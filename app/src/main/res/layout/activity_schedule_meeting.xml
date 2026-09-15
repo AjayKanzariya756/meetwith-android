@@ -25,13 +25,24 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Meeting Topic">
+            android:hint="Meeting Topic"
+            app:boxBackgroundColor="@color/input_bg"
+            app:boxStrokeColor="@color/primary"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:hintTextColor="@color/primary"
+            android:textColorHint="@color/text_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etScheduleTopic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Scheduled Conference" />
+                android:text="Scheduled Conference"
+                android:textColor="@color/input_text"
+                android:textColorHint="@color/text_hint"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Date & Time pickers -->
@@ -49,6 +60,9 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
                 android:text="Select Date"
+                android:textColor="@color/primary"
+                app:strokeColor="@color/primary"
+                app:cornerRadius="12dp"
                 app:icon="@drawable/ic_calendar" />
 
             <Button
@@ -58,29 +72,47 @@
                 android:layout_height="52dp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:text="Select Time" />
+                android:text="Select Time"
+                android:textColor="@color/primary"
+                app:strokeColor="@color/primary"
+                app:cornerRadius="12dp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvSelectedDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="Selected: Not chosen"
             android:textColor="@color/primary"
-            android:textSize="14sp" />
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Meeting Passcode">
+            android:hint="Meeting Passcode (Optional)"
+            app:boxBackgroundColor="@color/input_bg"
+            app:boxStrokeColor="@color/primary"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:hintTextColor="@color/primary"
+            android:textColorHint="@color/text_hint"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSchedulePassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/input_text"
+                android:textColorHint="@color/text_hint"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -91,6 +123,7 @@
             android:background="@drawable/bg_button_orange"
             android:text="Save &amp; Schedule"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>

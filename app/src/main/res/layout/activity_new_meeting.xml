@@ -21,13 +21,24 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Meeting Title">
+        android:hint="Meeting Title"
+        app:boxBackgroundColor="@color/input_bg"
+        app:boxStrokeColor="@color/primary"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:hintTextColor="@color/primary"
+        android:textColorHint="@color/text_hint">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etMeetingTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Instant Meeting" />
+            android:text="Instant Meeting"
+            android:textColor="@color/input_text"
+            android:textColorHint="@color/text_hint"
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -35,13 +46,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Meeting Password (Optional)">
+        android:hint="Meeting Password (Optional)"
+        app:boxBackgroundColor="@color/input_bg"
+        app:boxStrokeColor="@color/primary"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:hintTextColor="@color/primary"
+        android:textColorHint="@color/text_hint"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etMeetingPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/input_text"
+            android:textColorHint="@color/text_hint"
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Meeting Options Switches -->
@@ -50,7 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:cardCornerRadius="12dp"
-        app:cardElevation="1dp">
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/card_background">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,5 +119,6 @@
         android:background="@drawable/bg_button_orange"
         android:text="Start Meeting"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 </LinearLayout>

@@ -10,18 +10,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Search input -->
+        <!-- Search input with high contrast white background and crisp dark text -->
         <EditText
             android:id="@+id/etSearchContact"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_margin="16dp"
             android:background="@drawable/bg_input_field"
             android:hint="Search contacts..."
             android:paddingHorizontal="16dp"
-            android:textColor="@color/text_primary"
-            android:textColorHint="@color/text_secondary"
-            android:textSize="14sp" />
+            android:textColor="@color/input_text"
+            android:textColorHint="@color/text_hint"
+            android:textSize="15sp" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshContacts"

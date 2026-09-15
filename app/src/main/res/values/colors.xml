@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand Colors -->
     <color name="primary">#0047AB</color>
-    <color name="primary_dark">#003380</color>
+    <color name="primary_dark">#002D6C</color>
     <color name="accent">#F26D21</color>
-    <color name="background">#F5F5F7</color>
+    
+    <!-- Surfaces & Backgrounds -->
+    <color name="background">#F1F5F9</color>
     <color name="card_background">#FFFFFF</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
+    
+    <!-- Input Fields (High Contrast) -->
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_text">#0F172A</color>
+    <color name="input_stroke">#94A3B8</color>
+    <color name="text_hint">#64748B</color>
+    
+    <!-- Typography -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    
+    <!-- Accents & Buttons -->
     <color name="orange">#F26D21</color>
     <color name="blue">#0047AB</color>
     <color name="purple">#7E57C2</color>
     <color name="teal">#00897B</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray_light">#E0E0E0</color>
-    <color name="gray_dark">#424242</color>
+    <color name="gray_light">#E2E8F0</color>
+    <color name="gray_dark">#334155</color>
     <color name="red">#E53935</color>
     <color name="green">#43A047</color>
 </resources>
