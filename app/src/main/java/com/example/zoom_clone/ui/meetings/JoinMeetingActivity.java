@@ -47,31 +47,43 @@ public class JoinMeetingActivity extends AppCompatActivity {
             binding.btnConfirmJoin.setEnabled(false);
 
             final String finalJoinName = joinName;
-            // Lookup host and meeting info
-            firebaseManager.findHostByMeetingId(meetingId).addOnCompleteListener(task -> {
-                MeetUser host = task.getResult();
-                String hostName = host != null ? host.getName() : "Host";
-                String hostEmail = host != null ? host.getEmail() : "";
+            try {
+                firebaseManager.findHostByMeetingId(meetingId).addOnCompleteListener(task -> {
+                    try {
+                        MeetUser host = task.getResult();
+                        String hostName = host != null ? host.getName() : "Host";
+                        String hostEmail = host != null ? host.getEmail() : "";
 
-                Meeting joinedRecord = new Meeting(
-                        "Meeting with " + hostName,
-                        meetingId,
-                        hostName,
-                        hostEmail,
-                        String.valueOf(System.currentTimeMillis()),
-                        ""
-                );
-                firebaseManager.saveJoinedMeeting(joinedRecord);
+                        Meeting joinedRecord = new Meeting(
+                                "Meeting with " + hostName,
+                                meetingId,
+                                hostName,
+                                hostEmail,
+                                String.valueOf(System.currentTimeMillis()),
+                                ""
+                        );
+                        firebaseManager.saveJoinedMeeting(joinedRecord);
+                    } catch (Exception ignored) {}
 
-                String userId = currentUser != null ? currentUser.getId() : "user_" + System.currentTimeMillis();
-
-                Intent intent = new Intent(JoinMeetingActivity.this, VideoConferenceActivity.class);
-                intent.putExtra("conferenceID", meetingId);
-                intent.putExtra("userID", userId);
-                intent.putExtra("userName", finalJoinName);
-                startActivity(intent);
-                finish();
-            });
+                    launchConference(meetingId, finalJoinName);
+                });
+            } catch (Exception e) {
+                launchConference(meetingId, finalJoinName);
+            }
         });
+    }
+
+    private void launchConference(String meetingId, String joinName) {
+        MeetUser user = firebaseManager.getCurUser();
+        String userId = user != null && !user.getId().isEmpty() ? user.getId() : "user_" + System.currentTimeMillis();
+
+        Intent intent = new Intent(JoinMeetingActivity.this, VideoConferenceActivity.class);
+        intent.putExtra("conferenceID", meetingId);
+        intent.putExtra("userID", userId);
+        intent.putExtra("userName", joinName);
+        intent.putExtra("isVideoOn", !binding.switchJoinVideo.isChecked());
+        intent.putExtra("isAudioOn", !binding.switchJoinAudio.isChecked());
+        startActivity(intent);
+        finish();
     }
 }

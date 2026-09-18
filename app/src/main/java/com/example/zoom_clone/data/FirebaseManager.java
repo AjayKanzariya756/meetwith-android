@@ -178,7 +178,27 @@ public class FirebaseManager {
 
     // Create instant meeting
     public Task<DocumentReference> createMeeting(String meetingName, String password) {
-        if (curUser == null) throw new IllegalStateException("User not loaded");
+        if (curUser == null && auth != null && auth.getCurrentUser() != null) {
+            return fetchSelfData().continueWithTask(t -> {
+                if (curUser == null) {
+                    return Tasks.forException(new IllegalStateException("User profile not found in database"));
+                }
+                String time = String.valueOf(System.currentTimeMillis());
+                Meeting meeting = new Meeting(
+                        meetingName,
+                        curUser.getMeetingId(),
+                        curUser.getName(),
+                        curUser.getEmail(),
+                        time,
+                        password
+                );
+                return firestore.collection("users").document(curUser.getId())
+                        .collection("your_meeting").add(meeting.toMap());
+            });
+        }
+        if (curUser == null) {
+            return Tasks.forException(new IllegalStateException("User not logged in"));
+        }
         String time = String.valueOf(System.currentTimeMillis());
         Meeting meeting = new Meeting(
                 meetingName,
@@ -221,7 +241,18 @@ public class FirebaseManager {
     }
 
     public Task<DocumentReference> saveJoinedMeeting(Meeting meeting) {
-        if (curUser == null) throw new IllegalStateException("User not loaded");
+        if (curUser == null && auth != null && auth.getCurrentUser() != null) {
+            return fetchSelfData().continueWithTask(t -> {
+                if (curUser == null) {
+                    return Tasks.forException(new IllegalStateException("User profile not found in database"));
+                }
+                return firestore.collection("users").document(curUser.getId())
+                        .collection("Joined_Meeting").add(meeting.toMap());
+            });
+        }
+        if (curUser == null) {
+            return Tasks.forException(new IllegalStateException("User not logged in"));
+        }
         return firestore.collection("users").document(curUser.getId())
                 .collection("Joined_Meeting").add(meeting.toMap());
     }

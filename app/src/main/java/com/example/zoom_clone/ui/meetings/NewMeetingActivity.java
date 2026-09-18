@@ -39,22 +39,28 @@ public class NewMeetingActivity extends AppCompatActivity {
             }
 
             binding.btnStartMeeting.setEnabled(false);
-            firebaseManager.createMeeting(title, password)
-                    .addOnSuccessListener(ref -> {
-                        String userId = user != null ? user.getId() : "user_" + System.currentTimeMillis();
-                        String userName = user != null ? user.getName() : "Host";
-
-                        Intent intent = new Intent(NewMeetingActivity.this, VideoConferenceActivity.class);
-                        intent.putExtra("conferenceID", meetingId);
-                        intent.putExtra("userID", userId);
-                        intent.putExtra("userName", userName);
-                        startActivity(intent);
-                        finish();
-                    })
-                    .addOnFailureListener(e -> {
-                        binding.btnStartMeeting.setEnabled(true);
-                        Toast.makeText(NewMeetingActivity.this, "Error starting meeting: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    });
+            try {
+                firebaseManager.createMeeting(title, password)
+                        .addOnSuccessListener(ref -> launchConference(meetingId))
+                        .addOnFailureListener(e -> launchConference(meetingId)); // Launch anyway for instant meeting
+            } catch (Exception e) {
+                launchConference(meetingId);
+            }
         });
+    }
+
+    private void launchConference(String meetingId) {
+        MeetUser currentUser = firebaseManager.getCurUser();
+        String userId = currentUser != null && !currentUser.getId().isEmpty() ? currentUser.getId() : "user_" + System.currentTimeMillis();
+        String userName = currentUser != null && !currentUser.getName().isEmpty() ? currentUser.getName() : "Host";
+
+        Intent intent = new Intent(NewMeetingActivity.this, VideoConferenceActivity.class);
+        intent.putExtra("conferenceID", meetingId);
+        intent.putExtra("userID", userId);
+        intent.putExtra("userName", userName);
+        intent.putExtra("isVideoOn", binding.switchVideo.isChecked());
+        intent.putExtra("isAudioOn", binding.switchAudio.isChecked());
+        startActivity(intent);
+        finish();
     }
 }

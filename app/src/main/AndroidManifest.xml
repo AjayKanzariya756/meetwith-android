@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- Hardware features -->
     <uses-feature android:name="android.hardware.camera" android:required="false" />
@@ -24,6 +26,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/launcher_icon"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/Theme.MeetWith">
 
         <!-- Splash Activity (Launcher) -->
@@ -67,10 +70,11 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- Video Conference Room (Supports orientation change) -->
+        <!-- Video Conference Room (Hardware Accelerated) -->
         <activity
             android:name=".ui.conference.VideoConferenceActivity"
             android:exported="false"
+            android:hardwareAccelerated="true"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout" />
 
         <!-- Profile & Contacts -->
